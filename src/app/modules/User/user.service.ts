@@ -32,7 +32,7 @@ const loginUser = async (payload: any) => {
   const JWT_EXPIRES_IN = 60 * 60 * 24;
 
   const token = jwt.sign(
-    { userId: user._id, email: user.email },
+    { userId: user._id, email: user.email,name:user.name,photoURL:user.photoURL },
     config.JWT_SECRET as string,
     { expiresIn: JWT_EXPIRES_IN }
   );
